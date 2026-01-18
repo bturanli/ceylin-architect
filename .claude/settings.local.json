@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Architect portfolio with Blue Ocean Minimalist design\n\n- Header: sticky minimal navigation with menu overlay\n- Hero: animated statement with background image and scroll indicator\n- ProjectGallery: masonry grid with hover data cards showing project intelligence\n- ProjectViewer: full-screen swipeable gallery with 20 images per project\n- Swiss typography using Inter font\n- Framer Motion animations throughout\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx vercel --version)",
+      "Bash(npx vercel:*)"
+    ]
+  }
+}
