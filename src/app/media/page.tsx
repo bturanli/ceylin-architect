@@ -20,12 +20,6 @@ const newsItems = [
     titleKey: "media.news2.title",
     descKey: "media.news2.desc",
   },
-  {
-    id: 3,
-    dateKey: "media.news3.date",
-    titleKey: "media.news3.title",
-    descKey: "media.news3.desc",
-  },
 ];
 
 const links = [
