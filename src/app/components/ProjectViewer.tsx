@@ -86,7 +86,7 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed inset-0 z-[100] bg-white"
       >
-        <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-12 lg:px-16">
+        <header className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-5 md:px-12 lg:px-16">
           <div>
             <h2 className="text-sm font-medium tracking-wide text-[#1a1a1a]">
               {project.title}
@@ -105,7 +105,7 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
           </button>
         </header>
 
-        <div className="absolute top-5 left-1/2 z-10 -translate-x-1/2 text-xs tracking-widest text-[#1a1a1a]/50">
+        <div className="absolute top-5 left-1/2 z-30 -translate-x-1/2 text-xs tracking-widest text-[#1a1a1a]/50">
           {String(currentIndex + 1).padStart(2, "0")} / {String(project.images.length).padStart(2, "0")}
         </div>
 
