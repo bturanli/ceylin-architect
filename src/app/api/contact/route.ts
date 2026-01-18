@@ -24,9 +24,20 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create transporter using environment variables
+    // Check environment variables
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+      console.error("Missing SMTP credentials");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
+
+    // Create transporter with explicit Gmail settings
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
@@ -35,7 +46,7 @@ export async function POST(request: Request) {
 
     // Email content
     const mailOptions = {
-      from: process.env.SMTP_USER,
+      from: `"Portfolio Contact" <${process.env.SMTP_USER}>`,
       to: RECIPIENT_EMAIL,
       replyTo: email,
       subject: `New Project Inquiry: ${projectType} - from ${name}`,
@@ -92,8 +103,9 @@ This message was sent from your portfolio website contact form.
     );
   } catch (error) {
     console.error("Error sending email:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: "Failed to send email. Please try again later." },
+      { error: `Failed to send email: ${errorMessage}` },
       { status: 500 }
     );
   }
