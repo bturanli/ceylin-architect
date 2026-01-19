@@ -10,10 +10,10 @@ export default function About() {
   const { t } = useI18n();
 
   const stats = [
-    { value: "5+", labelKey: "stats.yearsExp" },
-    { value: "20+", labelKey: "stats.projects" },
-    { value: "98%", labelKey: "stats.onTime" },
-    { value: "15%", labelKey: "stats.savings" },
+    { value: "Bilkent", labelKey: "stats.education" },
+    { value: "M.Arch", labelKey: "stats.degree" },
+    { value: "Izmir", labelKey: "stats.basedIn" },
+    { value: "Renovation", labelKey: "stats.focus" },
   ];
 
   const expertise = [
@@ -26,10 +26,9 @@ export default function About() {
   ];
 
   const timeline = [
-    { year: "2024", titleKey: "timeline.2024.title", descKey: "timeline.2024.desc" },
-    { year: "2022", titleKey: "timeline.2022.title", descKey: "timeline.2022.desc" },
-    { year: "2020", titleKey: "timeline.2020.title", descKey: "timeline.2020.desc" },
-    { year: "2020+", titleKey: "timeline.masters.title", descKey: "timeline.masters.desc" },
+    { year: "01", titleKey: "timeline.1.title", descKey: "timeline.1.desc" },
+    { year: "02", titleKey: "timeline.2.title", descKey: "timeline.2.desc" },
+    { year: "03", titleKey: "timeline.3.title", descKey: "timeline.3.desc" },
   ];
 
   return (

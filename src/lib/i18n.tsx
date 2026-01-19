@@ -20,7 +20,7 @@ const translations = {
     "nav.close": "Close",
 
     // Hero
-    "hero.projectCount": "6 Projects — 2022–2024",
+    "hero.projectCount": "Featured Project — 2024",
     "hero.title": "Selected Work",
     "hero.subtitle": "Each project reveals the challenge solved—budgets met, timelines kept, problems navigated.",
 
@@ -46,10 +46,10 @@ const translations = {
     "about.journey": "Journey",
 
     // Stats
-    "stats.yearsExp": "Years Experience",
-    "stats.projects": "Projects Completed",
-    "stats.onTime": "On-Time Delivery",
-    "stats.savings": "Avg. Budget Savings",
+    "stats.education": "University",
+    "stats.degree": "Degree",
+    "stats.basedIn": "Based In",
+    "stats.focus": "Focus",
 
     // Expertise items
     "expertise.residential": "Residential Architecture",
@@ -60,14 +60,12 @@ const translations = {
     "expertise.sustainable": "Sustainable Design",
 
     // Timeline
-    "timeline.2024.title": "Origo House — Izmir",
-    "timeline.2024.desc": "Operating from Izmir, focusing on renovation projects that integrate interior and exterior spaces into cohesive living experiences.",
-    "timeline.2022.title": "Founded Origo House",
-    "timeline.2022.desc": "Established Istanbul-based practice during Master's studies, specializing in residential renovation projects.",
-    "timeline.2020.title": "B.Arch Graduate",
-    "timeline.2020.desc": "Bachelor of Architecture from Bilkent University Faculty of Architecture.",
-    "timeline.masters.title": "M.Arch — Bilkent University",
-    "timeline.masters.desc": "Completed Master of Architecture at Bilkent University while launching independent practice.",
+    "timeline.1.title": "B.Arch — Bilkent University",
+    "timeline.1.desc": "Graduated from Bilkent University Faculty of Architecture.",
+    "timeline.2.title": "M.Arch — Bilkent University",
+    "timeline.2.desc": "Completed Master of Architecture at Bilkent. Founded Origo House during graduate studies.",
+    "timeline.3.title": "Origo House — Izmir",
+    "timeline.3.desc": "Operating independently from Izmir, specializing in renovation projects.",
 
     // Contact Page
     "contact.label": "Get in Touch",
@@ -130,24 +128,9 @@ const translations = {
     "nav.media": "Media",
 
     // Projects
-    "project.1.title": "Coastal Residence",
-    "project.1.location": "Bodrum, Turkey",
-    "project.1.challenge": "Preserved sea views while maximizing privacy from neighbors through strategic landscaping and angled facades",
-    "project.2.title": "Urban Office Complex",
-    "project.2.location": "Istanbul, Turkey",
-    "project.2.challenge": "Delivered 15% under budget through prefab innovations and careful contractor coordination",
-    "project.3.title": "Mountain Retreat",
-    "project.3.location": "Uludag, Turkey",
-    "project.3.challenge": "Achieved net-zero energy in extreme climate conditions using passive solar design",
-    "project.4.title": "Heritage Restoration",
-    "project.4.location": "Izmir, Turkey",
-    "project.4.challenge": "Navigated complex heritage permits and completed 2 months ahead of schedule",
-    "project.5.title": "Minimalist Villa",
-    "project.5.location": "Cesme, Turkey",
-    "project.5.challenge": "Integrated smart home systems within traditional aesthetic without visible technology",
-    "project.6.title": "Cultural Center",
-    "project.6.location": "Ankara, Turkey",
-    "project.6.challenge": "Coordinated 12 contractors across pandemic delays while maintaining design integrity",
+    "project.1.title": "Villa Nazliaka",
+    "project.1.location": "Urla, Izmir",
+    "project.1.challenge": "Transformed a disconnected villa by integrating interior and exterior spaces through a new terrace, pool, and landscape design—creating a four-season living experience",
   },
   tr: {
     // Header
@@ -158,7 +141,7 @@ const translations = {
     "nav.close": "Kapat",
 
     // Hero
-    "hero.projectCount": "6 Proje — 2022–2024",
+    "hero.projectCount": "Öne Çıkan Proje — 2024",
     "hero.title": "Seçili Çalışmalar",
     "hero.subtitle": "Her proje çözülen zorluğu ortaya koyar—bütçeler karşılandı, zamanlamalar tutturuldu, sorunlar aşıldı.",
 
@@ -184,10 +167,10 @@ const translations = {
     "about.journey": "Yolculuk",
 
     // Stats
-    "stats.yearsExp": "Yıl Deneyim",
-    "stats.projects": "Tamamlanan Proje",
-    "stats.onTime": "Zamanında Teslimat",
-    "stats.savings": "Ort. Bütçe Tasarrufu",
+    "stats.education": "Üniversite",
+    "stats.degree": "Derece",
+    "stats.basedIn": "Konum",
+    "stats.focus": "Odak",
 
     // Expertise items
     "expertise.residential": "Konut Mimarisi",
@@ -198,14 +181,12 @@ const translations = {
     "expertise.sustainable": "Sürdürülebilir Tasarım",
 
     // Timeline
-    "timeline.2024.title": "Origo House — İzmir",
-    "timeline.2024.desc": "İzmir'den faaliyet göstererek, iç ve dış mekanları bütünleşik yaşam deneyimlerine dönüştüren renovasyon projelerine odaklanıyorum.",
-    "timeline.2022.title": "Origo House'un Kuruluşu",
-    "timeline.2022.desc": "Yüksek lisans sürecinde İstanbul merkezli firmayı kurdum, konut renovasyon projelerinde uzmanlaştım.",
-    "timeline.2020.title": "Lisans Mezunu",
-    "timeline.2020.desc": "Bilkent Üniversitesi Mimarlık Fakültesi'nden Mimarlık Lisans derecesi.",
-    "timeline.masters.title": "Y.Lisans — Bilkent Üniversitesi",
-    "timeline.masters.desc": "Bağımsız pratiği başlatırken Bilkent Üniversitesi'nde Mimarlık Yüksek Lisansını tamamladım.",
+    "timeline.1.title": "Lisans — Bilkent Üniversitesi",
+    "timeline.1.desc": "Bilkent Üniversitesi Mimarlık Fakültesi'nden mezun oldum.",
+    "timeline.2.title": "Y.Lisans — Bilkent Üniversitesi",
+    "timeline.2.desc": "Bilkent'te Mimarlık Yüksek Lisansını tamamladım. Yüksek lisans sürecinde Origo House'u kurdum.",
+    "timeline.3.title": "Origo House — İzmir",
+    "timeline.3.desc": "İzmir'den bağımsız olarak faaliyet gösteriyorum, renovasyon projelerinde uzmanlaşıyorum.",
 
     // Contact Page
     "contact.label": "İletişim",
@@ -268,24 +249,9 @@ const translations = {
     "nav.media": "Medya",
 
     // Projects
-    "project.1.title": "Sahil Rezidansı",
-    "project.1.location": "Bodrum, Türkiye",
-    "project.1.challenge": "Stratejik peyzaj ve açılı cephelerle komşulardan maksimum mahremiyet sağlarken deniz manzarası korundu",
-    "project.2.title": "Kentsel Ofis Kompleksi",
-    "project.2.location": "İstanbul, Türkiye",
-    "project.2.challenge": "Prefabrik yenilikler ve dikkatli yüklenici koordinasyonuyla bütçenin %15 altında teslim edildi",
-    "project.3.title": "Dağ Evi",
-    "project.3.location": "Uludağ, Türkiye",
-    "project.3.challenge": "Pasif güneş tasarımı kullanılarak ekstrem iklim koşullarında sıfır enerji hedefine ulaşıldı",
-    "project.4.title": "Tarihi Restorasyon",
-    "project.4.location": "İzmir, Türkiye",
-    "project.4.challenge": "Karmaşık miras izinleri aşılarak programın 2 ay öncesinde tamamlandı",
-    "project.5.title": "Minimalist Villa",
-    "project.5.location": "Çeşme, Türkiye",
-    "project.5.challenge": "Akıllı ev sistemleri görünür teknoloji olmadan geleneksel estetiğe entegre edildi",
-    "project.6.title": "Kültür Merkezi",
-    "project.6.location": "Ankara, Türkiye",
-    "project.6.challenge": "Pandemi gecikmeleri boyunca tasarım bütünlüğü korunarak 12 yüklenici koordine edildi",
+    "project.1.title": "Villa Nazliaka",
+    "project.1.location": "Urla, İzmir",
+    "project.1.challenge": "Kopuk bir villayı, yeni teras, havuz ve peyzaj tasarımıyla iç ve dış mekanları bütünleştirerek dört mevsim yaşayan bir deneyime dönüştürdük",
   },
 };
 
