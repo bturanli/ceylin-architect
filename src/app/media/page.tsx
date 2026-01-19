@@ -27,19 +27,7 @@ const links = [
     id: 1,
     titleKey: "media.link1.title",
     descKey: "media.link1.desc",
-    url: "https://www.archdaily.com",
-  },
-  {
-    id: 2,
-    titleKey: "media.link2.title",
-    descKey: "media.link2.desc",
-    url: "https://www.dezeen.com",
-  },
-  {
-    id: 3,
-    titleKey: "media.link3.title",
-    descKey: "media.link3.desc",
-    url: "https://www.instagram.com",
+    url: "https://www.instagram.com/origohouse",
   },
 ];
 
