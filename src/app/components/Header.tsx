@@ -2,22 +2,52 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useI18n } from "@/lib/i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useI18n();
+  const router = useRouter();
+
+  const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (window.location.pathname !== "/") {
+      router.push("/");
+      setTimeout(() => {
+        scrollToProjects();
+      }, 100);
+    } else {
+      scrollToProjects();
+    }
+    setMenuOpen(false);
+  };
+
+  const scrollToProjects = () => {
+    const element = document.getElementById("projects");
+    if (element) {
+      const headerOffset = 20;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const navItems = [
-    { label: t("nav.projects"), href: "/#projects" },
+    { label: t("nav.projects"), href: "/#projects", onClick: handleProjectsClick },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.media"), href: "/media" },
     { label: t("nav.contact"), href: "/contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
+    <header className="relative z-50 bg-white">
       <div className="flex items-center justify-between px-6 py-5 md:px-12 lg:px-16">
         <Link
           href="/"
@@ -32,6 +62,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={item.onClick}
               className="text-sm font-light tracking-wide text-[#1a1a1a] transition-opacity hover:opacity-60"
             >
               {item.label}
@@ -61,7 +92,13 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="block py-3 text-2xl font-light text-[#1a1a1a] transition-opacity hover:opacity-60"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => {
+                    if (item.onClick) {
+                      item.onClick(e);
+                    } else {
+                      setMenuOpen(false);
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>

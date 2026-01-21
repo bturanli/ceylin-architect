@@ -142,7 +142,7 @@ const translations = {
     // Projects
     "project.1.title": "Nazlıaka Evi",
     "project.1.location": "Urla, Izmir",
-    "project.1.year": "October 2023 – May 2025",
+    "project.1.year": "2024–2025",
     "project.1.challenge": "Transformed a disconnected thirty-year-old villa into an observant architectural volume that harmonizes with the Mediterranean landscape",
     "project.1.description": "Situated on the Toptepe promontory, the renovation of this thirty-year-old villa focuses on the strategic re-establishment of the building's relationship with its Mediterranean context. The design language prioritizes a minimalist formal expression to act as a quiet intermediary between the interior program and the surrounding landscape of Urla.",
     "project.1.description2": "By reorganizing the site's topography and introducing a reflecting pool, the project transforms a previously insular structure into an observant architectural volume. The villa now functions as a contextual anchor, harmonizing with the verticality of the endemic cypress trees and the horizontal expanse of the Aegean horizon.",
@@ -282,7 +282,7 @@ const translations = {
     // Projects
     "project.1.title": "Nazlıaka Evi",
     "project.1.location": "Urla, İzmir",
-    "project.1.year": "Ekim 2023 – Mayıs 2025",
+    "project.1.year": "2024–2025",
     "project.1.challenge": "Otuz yıllık kopuk bir villayı, Akdeniz peyzajıyla uyum içinde gözlemci bir mimari hacme dönüştürdük",
     "project.1.description": "Toptepe burnunda konumlanan bu otuz yıllık villanın renovasyonu, yapının Akdeniz bağlamıyla ilişkisinin stratejik olarak yeniden kurulmasına odaklanıyor. Tasarım dili, iç mekan programı ile Urla'nın çevredeki peyzajı arasında sessiz bir aracı olarak minimalist bir biçimsel ifadeyi önceliklendiriyor.",
     "project.1.description2": "Arazinin topografyasını yeniden düzenleyerek ve yansıtıcı bir havuz ekleyerek, proje daha önce içe dönük bir yapıyı gözlemci bir mimari hacme dönüştürüyor. Villa artık bağlamsal bir çapa işlevi görüyor; endemik servi ağaçlarının dikeyliği ve Ege ufkunun yatay genişliğiyle uyum sağlıyor.",

@@ -16,10 +16,10 @@ const projectsData = [
     titleKey: "project.1.title",
     thumbnail: "/projects/project-1.jpg",
     locationKey: "project.1.location",
-    year: "2023–2025",
+    year: "2024–2025",
     challengeKey: "project.1.challenge",
     aspectRatio: "tall" as const,
-    images: Array.from({ length: 25 }, (_, i) => `/projects/1/${String(i + 1).padStart(2, "0")}.jpg`),
+    images: Array.from({ length: 17 }, (_, i) => `/projects/1/${String(i + 1).padStart(2, "0")}.jpg`),
   },
 ];
 

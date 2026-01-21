@@ -9,6 +9,13 @@ import { useI18n } from "@/lib/i18n";
 // Content data - easy to update
 const newsItems = [
   {
+    id: 3,
+    dateKey: "media.news3.date",
+    titleKey: "media.news3.title",
+    descKey: "media.news3.desc",
+    linkKey: "media.news3.link",
+  },
+  {
     id: 1,
     dateKey: "media.news1.date",
     titleKey: "media.news1.title",
@@ -19,13 +26,6 @@ const newsItems = [
     dateKey: "media.news2.date",
     titleKey: "media.news2.title",
     descKey: "media.news2.desc",
-  },
-  {
-    id: 3,
-    dateKey: "media.news3.date",
-    titleKey: "media.news3.title",
-    descKey: "media.news3.desc",
-    linkKey: "media.news3.link",
   },
 ];
 
