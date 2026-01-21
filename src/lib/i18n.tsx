@@ -20,7 +20,7 @@ const translations = {
     "nav.close": "Close",
 
     // Hero
-    "hero.projectCount": "Featured Project — 2024",
+    "hero.projectCount": "Featured Project — 2025",
     "hero.title": "Selected Work",
     "hero.subtitle": "Each project reveals the challenge solved—budgets met, timelines kept, problems navigated.",
 
@@ -160,7 +160,7 @@ const translations = {
     "nav.close": "Kapat",
 
     // Hero
-    "hero.projectCount": "Öne Çıkan Proje — 2024",
+    "hero.projectCount": "Öne Çıkan Proje — 2025",
     "hero.title": "Seçili Çalışmalar",
     "hero.subtitle": "Her proje çözülen zorluğu ortaya koyar—bütçeler karşılandı, zamanlamalar tutturuldu, sorunlar aşıldı.",
 

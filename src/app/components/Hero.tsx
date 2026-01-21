@@ -7,7 +7,7 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section className="flex flex-col justify-end px-6 pb-12 pt-24 md:px-12 md:pb-16 md:pt-28 lg:px-16">
+    <section className="flex flex-col justify-end px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
       <div className="max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
