@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "Ceylin Karakaya | Architect",
   description:
     "Portfolio of Ceylin Karakaya - delivering architectural projects with precision, intelligence, and design excellence.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
