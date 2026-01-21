@@ -91,7 +91,7 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
   };
 
   // Apple-style easing - very smooth, almost spring-like
-  const appleEasing = [0.25, 0.1, 0.25, 1];
+  const appleEasing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
   return (
     <AnimatePresence>
