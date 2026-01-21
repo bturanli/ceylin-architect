@@ -32,6 +32,16 @@ const translations = {
 
     // Project Viewer
     "viewer.close": "Close",
+    "viewer.info": "Info",
+    "viewer.projectInfo": "Project Information",
+    "viewer.location": "Location",
+    "viewer.period": "Period",
+    "viewer.address": "Address",
+    "viewer.description": "Description",
+    "viewer.team": "Project Team",
+    "viewer.architect": "Architect",
+    "viewer.client": "Client",
+    "viewer.contractor": "Contractor",
 
     // About Page
     "about.label": "About",
@@ -128,9 +138,16 @@ const translations = {
     "nav.media": "Media",
 
     // Projects
-    "project.1.title": "Villa Nazliaka",
+    "project.1.title": "Nazlıaka Evi",
     "project.1.location": "Urla, Izmir",
-    "project.1.challenge": "Transformed a disconnected villa by integrating interior and exterior spaces through a new terrace, pool, and landscape design—creating a four-season living experience",
+    "project.1.year": "October 2023 – May 2025",
+    "project.1.challenge": "Transformed a disconnected thirty-year-old villa into an observant architectural volume that harmonizes with the Mediterranean landscape",
+    "project.1.description": "Situated on the Toptepe promontory, the renovation of this thirty-year-old villa focuses on the strategic re-establishment of the building's relationship with its Mediterranean context. The design language prioritizes a minimalist formal expression to act as a quiet intermediary between the interior program and the surrounding landscape of Urla.",
+    "project.1.description2": "By reorganizing the site's topography and introducing a reflecting pool, the project transforms a previously insular structure into an observant architectural volume. The villa now functions as a contextual anchor, harmonizing with the verticality of the endemic cypress trees and the horizontal expanse of the Aegean horizon.",
+    "project.1.description3": "The application of a bespoke combed texture serves as a tactile tribute to the verticality of the surrounding cypress trees. During the day, the sun creates a rhythmic dance of light and shadow across these grooves. At night, integrated linear lighting grazes the ridges, bathing the terrace in a sophisticated glow.",
+    "project.1.client": "Elmaş A.Ş.",
+    "project.1.contractor": "Domino Gayrimenkul Yatırım A.Ş.",
+    "project.1.address": "Topaltı Sokak No:20, 35430 Urla, Izmir",
   },
   tr: {
     // Header
@@ -153,6 +170,16 @@ const translations = {
 
     // Project Viewer
     "viewer.close": "Kapat",
+    "viewer.info": "Bilgi",
+    "viewer.projectInfo": "Proje Bilgisi",
+    "viewer.location": "Konum",
+    "viewer.period": "Dönem",
+    "viewer.address": "Adres",
+    "viewer.description": "Açıklama",
+    "viewer.team": "Proje Ekibi",
+    "viewer.architect": "Mimar",
+    "viewer.client": "İşveren",
+    "viewer.contractor": "Yüklenici",
 
     // About Page
     "about.label": "Hakkımda",
@@ -249,9 +276,16 @@ const translations = {
     "nav.media": "Medya",
 
     // Projects
-    "project.1.title": "Villa Nazliaka",
+    "project.1.title": "Nazlıaka Evi",
     "project.1.location": "Urla, İzmir",
-    "project.1.challenge": "Kopuk bir villayı, yeni teras, havuz ve peyzaj tasarımıyla iç ve dış mekanları bütünleştirerek dört mevsim yaşayan bir deneyime dönüştürdük",
+    "project.1.year": "Ekim 2023 – Mayıs 2025",
+    "project.1.challenge": "Otuz yıllık kopuk bir villayı, Akdeniz peyzajıyla uyum içinde gözlemci bir mimari hacme dönüştürdük",
+    "project.1.description": "Toptepe burnunda konumlanan bu otuz yıllık villanın renovasyonu, yapının Akdeniz bağlamıyla ilişkisinin stratejik olarak yeniden kurulmasına odaklanıyor. Tasarım dili, iç mekan programı ile Urla'nın çevredeki peyzajı arasında sessiz bir aracı olarak minimalist bir biçimsel ifadeyi önceliklendiriyor.",
+    "project.1.description2": "Arazinin topografyasını yeniden düzenleyerek ve yansıtıcı bir havuz ekleyerek, proje daha önce içe dönük bir yapıyı gözlemci bir mimari hacme dönüştürüyor. Villa artık bağlamsal bir çapa işlevi görüyor; endemik servi ağaçlarının dikeyliği ve Ege ufkunun yatay genişliğiyle uyum sağlıyor.",
+    "project.1.description3": "Özel taraklı doku uygulaması, çevredeki servi ağaçlarının dikeyliğine dokunsal bir saygı niteliğinde. Gün boyunca güneş, bu oluklar boyunca ritmik bir ışık ve gölge dansı yaratıyor. Gece ise entegre doğrusal aydınlatma sırtları yalayarak terası sofistike bir ışıltıyla yıkıyor.",
+    "project.1.client": "Elmaş A.Ş.",
+    "project.1.contractor": "Domino Gayrimenkul Yatırım A.Ş.",
+    "project.1.address": "Topaltı Sokak No:20, 35430 Urla, İzmir",
   },
 };
 

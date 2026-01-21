@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Info } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export interface Project {
@@ -24,6 +24,7 @@ interface ProjectViewerProps {
 export default function ProjectViewer({ project, onClose }: ProjectViewerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [showInfo, setShowInfo] = useState(false);
   const { t } = useI18n();
 
   const goToNext = useCallback(() => {
@@ -40,9 +41,16 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") goToNext();
-      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "Escape") {
+        if (showInfo) {
+          setShowInfo(false);
+        } else {
+          onClose();
+        }
+      }
+      if (e.key === "ArrowRight" && !showInfo) goToNext();
+      if (e.key === "ArrowLeft" && !showInfo) goToPrev();
+      if (e.key === "i") setShowInfo((prev) => !prev);
     };
 
     if (project) {
@@ -54,10 +62,11 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [project, onClose, goToNext, goToPrev]);
+  }, [project, onClose, goToNext, goToPrev, showInfo]);
 
   useEffect(() => {
     setCurrentIndex(0);
+    setShowInfo(false);
   }, [project?.id]);
 
   if (!project) return null;
@@ -96,19 +105,31 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
             </p>
           </div>
 
-          <button
-            onClick={onClose}
-            className="flex items-center gap-2 text-sm text-[#1a1a1a] transition-opacity hover:opacity-60"
-          >
-            <span className="hidden sm:inline">{t("viewer.close")}</span>
-            <X size={20} />
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setShowInfo(!showInfo)}
+              className={`flex items-center gap-2 text-sm transition-opacity hover:opacity-60 ${
+                showInfo ? "text-[#1a1a1a]" : "text-[#1a1a1a]/50"
+              }`}
+            >
+              <Info size={18} />
+              <span className="hidden sm:inline">{t("viewer.info")}</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="flex items-center gap-2 text-sm text-[#1a1a1a] transition-opacity hover:opacity-60"
+            >
+              <span className="hidden sm:inline">{t("viewer.close")}</span>
+              <X size={20} />
+            </button>
+          </div>
         </header>
 
         <div className="absolute top-5 left-1/2 z-30 -translate-x-1/2 text-xs tracking-widest text-[#1a1a1a]/50">
           {String(currentIndex + 1).padStart(2, "0")} / {String(project.images.length).padStart(2, "0")}
         </div>
 
+        {/* Image Gallery */}
         <div className="relative h-full w-full overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
             <motion.div
@@ -164,17 +185,9 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
           <ChevronRight size={32} />
         </button>
 
+        {/* Footer with dots */}
         <footer className="absolute bottom-0 left-0 right-0 z-10 px-6 py-6 md:px-12 lg:px-16">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-xl">
-              <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
-                {t("gallery.challenge")}
-              </span>
-              <p className="mt-1 text-sm font-light text-[#1a1a1a]">
-                {project.challengeSolved}
-              </p>
-            </div>
-
+          <div className="flex items-end justify-center">
             <div className="flex gap-1">
               {project.images.map((_, idx) => (
                 <button
@@ -194,6 +207,101 @@ export default function ProjectViewer({ project, onClose }: ProjectViewerProps) 
             </div>
           </div>
         </footer>
+
+        {/* Info Panel */}
+        <AnimatePresence>
+          {showInfo && (
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-0 right-0 z-40 h-full w-full overflow-y-auto bg-white md:w-[480px] md:border-l md:border-gray-100"
+            >
+              <div className="px-8 py-24 md:py-32">
+                <button
+                  onClick={() => setShowInfo(false)}
+                  className="absolute top-5 right-6 text-[#1a1a1a]/50 transition-opacity hover:opacity-60 md:right-8"
+                >
+                  <X size={20} />
+                </button>
+
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#1a1a1a]/40">
+                  {t("viewer.projectInfo")}
+                </p>
+
+                <h3 className="mt-4 text-2xl font-light tracking-tight text-[#1a1a1a]">
+                  {project.title}
+                </h3>
+
+                <div className="mt-8 space-y-6">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
+                        {t("viewer.location")}
+                      </p>
+                      <p className="mt-1 text-sm font-light text-[#1a1a1a]">
+                        {project.location}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
+                        {t("viewer.period")}
+                      </p>
+                      <p className="mt-1 text-sm font-light text-[#1a1a1a]">
+                        {t("project.1.year")}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
+                      {t("viewer.address")}
+                    </p>
+                    <p className="mt-1 text-sm font-light text-[#1a1a1a]">
+                      {t("project.1.address")}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-gray-100 pt-6">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
+                      {t("viewer.description")}
+                    </p>
+                    <p className="mt-3 text-sm font-light leading-relaxed text-[#1a1a1a]/80">
+                      {t("project.1.description")}
+                    </p>
+                    <p className="mt-4 text-sm font-light leading-relaxed text-[#1a1a1a]/80">
+                      {t("project.1.description2")}
+                    </p>
+                    <p className="mt-4 text-sm font-light leading-relaxed text-[#1a1a1a]/80">
+                      {t("project.1.description3")}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-gray-100 pt-6">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#1a1a1a]/40">
+                      {t("viewer.team")}
+                    </p>
+                    <div className="mt-3 space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="font-light text-[#1a1a1a]/50">{t("viewer.architect")}</span>
+                        <span className="font-light text-[#1a1a1a]">Ceylin Karakaya Turanlı</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="font-light text-[#1a1a1a]/50">{t("viewer.client")}</span>
+                        <span className="font-light text-[#1a1a1a]">{t("project.1.client")}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="font-light text-[#1a1a1a]/50">{t("viewer.contractor")}</span>
+                        <span className="font-light text-[#1a1a1a]">{t("project.1.contractor")}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );
