@@ -20,6 +20,13 @@ const newsItems = [
     titleKey: "media.news2.title",
     descKey: "media.news2.desc",
   },
+  {
+    id: 3,
+    dateKey: "media.news3.date",
+    titleKey: "media.news3.title",
+    descKey: "media.news3.desc",
+    linkKey: "media.news3.link",
+  },
 ];
 
 const links = [
@@ -79,31 +86,60 @@ export default function Media() {
               {t("media.news")}
             </h2>
             <div className="space-y-0 divide-y divide-gray-100">
-              {newsItems.map((item, index) => (
-                <motion.article
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="group cursor-pointer py-8 transition-colors hover:bg-gray-50/50"
-                >
+              {newsItems.map((item, index) => {
+                const hasLink = 'linkKey' in item && item.linkKey;
+                const content = (
                   <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div className="flex-1">
                       <div className="mb-2 flex items-center gap-2 text-xs text-[#1a1a1a]/40">
                         <Calendar size={12} />
                         <span>{t(item.dateKey)}</span>
                       </div>
-                      <h3 className="text-xl font-light text-[#1a1a1a] transition-opacity group-hover:opacity-70 md:text-2xl">
-                        {t(item.titleKey)}
-                      </h3>
+                      <div className="flex items-start justify-between">
+                        <h3 className="text-xl font-light text-[#1a1a1a] transition-opacity group-hover:opacity-70 md:text-2xl">
+                          {t(item.titleKey)}
+                        </h3>
+                        {hasLink && (
+                          <ArrowUpRight
+                            size={18}
+                            className="ml-2 mt-1 flex-shrink-0 text-[#1a1a1a]/30 transition-all group-hover:text-[#1a1a1a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          />
+                        )}
+                      </div>
                       <p className="mt-2 text-sm font-light leading-relaxed text-[#1a1a1a]/60">
                         {t(item.descKey)}
                       </p>
                     </div>
                   </div>
-                </motion.article>
-              ))}
+                );
+
+                return hasLink ? (
+                  <motion.a
+                    key={item.id}
+                    href={t(item.linkKey as string)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="group block py-8 transition-colors hover:bg-gray-50/50"
+                  >
+                    {content}
+                  </motion.a>
+                ) : (
+                  <motion.article
+                    key={item.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="group py-8"
+                  >
+                    {content}
+                  </motion.article>
+                );
+              })}
             </div>
           </motion.section>
 

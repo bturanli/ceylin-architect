@@ -19,7 +19,7 @@ const projectsData = [
     year: "2023–2025",
     challengeKey: "project.1.challenge",
     aspectRatio: "tall" as const,
-    images: Array.from({ length: 35 }, (_, i) => `/projects/1/${String(i + 1).padStart(2, "0")}.jpg`),
+    images: Array.from({ length: 25 }, (_, i) => `/projects/1/${String(i + 1).padStart(2, "0")}.jpg`),
   },
 ];
 
